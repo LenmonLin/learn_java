@@ -49,12 +49,13 @@ public class TransactionTest {
 		} catch (Exception e1) {
 			System.out.println("======捕获到SQL异常========");
 			e1.printStackTrace();
-		}
-		try {
-			conn.rollback();
-			System.out.println("=======事物回滚成功======");
-		} catch (SQLException e2) {
-			e2.printStackTrace();
+		
+			try {
+				conn.rollback();
+				System.out.println("=======事物回滚成功======");
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
 		}
 		finally {
 			try {
